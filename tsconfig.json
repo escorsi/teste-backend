@@ -7,9 +7,13 @@
     "strictPropertyInitialization": false,
     "allowJs": true,
     "esModuleInterop": true,
-
     "emitDecoratorMetadata": true,
-
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/": [
+        "./"
+      ]
+    }
   }
 }
