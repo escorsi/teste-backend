@@ -1,0 +1,13 @@
+node_modules
+lib
+dist
+coverage
+config
+*.min.js
+.eslintrc.json
+Dockerfile
+docker-compose.debug.yml
+*.txt
+.husky/
+*.json
+wait-for

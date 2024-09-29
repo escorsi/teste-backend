@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { validateRegistration } from '../middlewares/ValidatorMiddleware';
+import validateRegistration from '../middlewares/ValidatorMiddleware';
 import container from 'src/Container';
 
-export class UserRoutes {
+export default class UserRoutes {
   private router: Router;
 
   constructor() {
@@ -92,7 +92,7 @@ export class UserRoutes {
      *           type: boolean
      *           description: Whether the user accepted the terms
      *           example: true
-     * 
+     *
      * /registration:
      *   post:
      *     summary: Create a new registration

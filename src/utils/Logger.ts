@@ -1,7 +1,7 @@
-import { createLogger, format, transports } from 'winston';
+import { createLogger, format, transports, Logger as WinstonLogger } from 'winston';
 
 export default class Logger {
-  private logger: any;
+  private logger: WinstonLogger;
 
   constructor() {
     const logFormat = format.printf(({ level, message, timestamp, stack }) => {
@@ -10,11 +10,7 @@ export default class Logger {
 
     this.logger = createLogger({
       level: 'info',
-      format: format.combine(
-        format.timestamp(),
-        format.errors({ stack: true }),
-        logFormat
-      ),
+      format: format.combine(format.timestamp(), format.errors({ stack: true }), logFormat),
       transports: [
         new transports.Console(),
         new transports.File({ filename: 'logs/error.log', level: 'error' }),

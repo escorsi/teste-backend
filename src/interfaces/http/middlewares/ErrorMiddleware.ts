@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import IError from 'src/types/shared/error';
 import Logger from 'src/utils/Logger';
 
-export class ErrorMiddleware {
+export default class ErrorMiddleware {
   private logger: Logger;
 
   constructor() {

@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import Logger from 'src/utils/Logger';
 import AppError from 'src/domain/errors/AppError';
 
-export class UserController {
+export default class UserController {
   private logger: Logger;
 
   constructor({ logger }: { logger: Logger }) {
@@ -10,7 +10,10 @@ export class UserController {
   }
 
   public async createUser(req: Request, res: Response): Promise<void> {
+    const callName = `${this.constructor.name}.${this.createUser.name}()`;
     try {
+      this.logger.info(`${callName} - body entry ${JSON.stringify(req.body)}`);
+
       const userData = req.body;
 
       res.status(201).json({
@@ -18,9 +21,9 @@ export class UserController {
         user: userData,
       });
 
-      this.logger.info(`User created: ${userData.email}`);
+      this.logger.info(`${callName} - user created: ${userData.email}`);
     } catch (error: unknown) {
-      this.logger.error(`Error in CreateUser: ${(error as Error).message || 'Unknown error'}`);
+      this.logger.error(`${callName} - error : ${(error as Error).message || 'Unknown error'}`);
       throw new AppError(error);
     }
   }

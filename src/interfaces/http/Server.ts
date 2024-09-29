@@ -1,6 +1,6 @@
-import { Application } from 'src/app/Application';
+import Application from 'src/app/Application';
 
-export class Server {
+export default class Server {
   private app: Application;
 
   constructor() {

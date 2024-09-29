@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { UserRoutes } from './presentation/UserRoutes';
+import UserRoutes from './presentation/UserRoutes';
 
-export class RouterRegister {
+export default class RouterRegister {
   private router: Router;
 
   constructor() {

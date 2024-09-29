@@ -1,5 +1,5 @@
 import { createContainer, asClass } from 'awilix';
-import { UserController } from 'src/interfaces/http/presentation/UserController';
+import UserController from 'src/interfaces/http/presentation/UserController';
 import Logger from 'src/utils/Logger';
 
 const container = createContainer();

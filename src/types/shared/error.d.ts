@@ -1,12 +1,11 @@
 export default interface IError {
-    message?: string;
+  message?: string;
+  details: unknown[];
+  error_code: number;
+  code?: number;
+  error?: {
+    message: string;
     details: unknown[];
-    error_code: number;
-    code?: number;
-    error?: {
-      message: string;
-      details: unknown[];
-    };
-    statusCode?: number;
+  };
+  statusCode?: number;
 }
-  
