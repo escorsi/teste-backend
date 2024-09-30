@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["jest", "node"],
     "target": "es5",
     "module": "commonjs",
     "outDir": "./dist",
@@ -11,9 +12,8 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "src/": [
-        "./"
-      ]
-    }
+      "src/*": ["./src/*"]
+    },
+    "typeRoots": ["./node_modules/@types"]
   }
 }

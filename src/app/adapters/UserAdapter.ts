@@ -21,10 +21,10 @@ export default class UserAdapter implements IUserAdapter {
     try {
       this.logger.info(`${callName} - adapting user data`);
 
-      const userEntity = await this.userEntity.validate(userData);
-      this.logger.info(`${callName} - user entity created: ${userEntity.email}`);
+      const userValidated = await this.userEntity.validate(userData);
+      this.logger.info(`${callName} - user entity created: ${userValidated.email}`);
 
-      const createdUser = await this.userUseCase.insertUser(userEntity);
+      const createdUser = await this.userUseCase.insertUser(userValidated);
 
       this.logger.info(`${callName} - user created successfully`);
       return createdUser;

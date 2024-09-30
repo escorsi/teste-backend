@@ -7,7 +7,11 @@
     "start": "ts-node-dev --files -r tsconfig-paths/register --inspect --ignore-watch node_modules src/index.ts",
     "lint": "eslint {src,test}/**/*",
     "lint-fix": "eslint --fix {src,test}/**/*",
-    "format": "prettier -w {src,test,config}/**/*"
+    "format": "prettier -w {src,test,config}/**/*",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:debug": "node --inspect-brk ./node_modules/.bin/jest --runInBand"
   },
   "dependencies": {
     "@prisma/client": "^5.20.0",
@@ -21,6 +25,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jest": "^29.5.13",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.6",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
@@ -34,8 +39,10 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
+    "jest": "^29.7.0",
     "prettier": "^3.3.3",
     "swagger-autogen": "^2.23.7",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^3.12.0",

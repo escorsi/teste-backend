@@ -4,10 +4,10 @@ import Logger from 'src/utils/Logger';
 import UserAdapter from 'src/app/adapters/UserAdapter';
 import UserUseCase from 'src/app/usecases/UserUseCase';
 import UserRepository from './infra/repositories/UserRepository';
-import UserEntity from './domain/entitites/UserEntity';
-import AddressEntity from './domain/entitites/AddressEntity';
-import CompanyUserEntity from './domain/entitites/CompanyUserEntity';
-import IndividualUserEntity from './domain/entitites/IndividualUserEntity';
+import UserEntity from './domain/entities/UserEntity';
+import AddressEntity from './domain/entities/AddressEntity';
+import CompanyUserEntity from './domain/entities/CompanyUserEntity';
+import IndividualUserEntity from './domain/entities/IndividualUserEntity';
 
 const container = createContainer();
 

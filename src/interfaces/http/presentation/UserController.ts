@@ -28,7 +28,9 @@ export default class UserController implements IUserController {
         message: 'User created successfully',
       });
     } catch (error: unknown) {
-      this.logger.error(`${callName} - error : ${(error as Error).message || 'Unknown error'}`);
+      const errorMessage = (error as AppError).error?.message || 'Unknown error';
+      this.logger.error(`${callName} - error : ${errorMessage}`);
+  
       throw new AppError(error);
     }
   }
