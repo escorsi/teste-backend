@@ -10,8 +10,11 @@ export default class RouterRegister {
   }
 
   private initializeRoutes() {
-    const userRoutes = new UserRoutes();
-    this.router.use(userRoutes.getRoutes());
+    const routes = [new UserRoutes()];
+
+    routes.forEach(route => {
+      this.router.use(route.getRoutes());
+    });
   }
 
   public getRoutes() {

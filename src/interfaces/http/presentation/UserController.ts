@@ -1,27 +1,32 @@
+import IContainerDependencies from 'src/types/shared/containerDependencies';
 import { Request, Response } from 'express';
-import Logger from 'src/utils/Logger';
 import AppError from 'src/domain/errors/AppError';
+import IEntryData from 'src/types/modules/data';
+import IUserController from '../@types/IUserController';
 
-export default class UserController {
-  private logger: Logger;
+type Dependencies = Pick<IContainerDependencies, 'logger' | 'userAdapter'>;
+export default class UserController implements IUserController {
+  private logger: Dependencies['logger'];
+  private userAdapter: Dependencies['userAdapter'];
 
-  constructor({ logger }: { logger: Logger }) {
+  constructor({ logger, userAdapter }: Dependencies) {
     this.logger = logger;
+    this.userAdapter = userAdapter;
   }
 
-  public async createUser(req: Request, res: Response): Promise<void> {
-    const callName = `${this.constructor.name}.${this.createUser.name}()`;
+  async createUser(req: Request, res: Response): Promise<void> {
+    const callName = `${this.constructor.name}.createUser()`;
     try {
-      this.logger.info(`${callName} - body entry ${JSON.stringify(req.body)}`);
+      this.logger.info(`${callName} - Initiating user creation process`);
 
-      const userData = req.body;
+      const userData: IEntryData = req.body;
+      await this.userAdapter.prepareUserData(userData);
+
+      this.logger.info(`${callName} - User successfully created`);
 
       res.status(201).json({
         message: 'User created successfully',
-        user: userData,
       });
-
-      this.logger.info(`${callName} - user created: ${userData.email}`);
     } catch (error: unknown) {
       this.logger.error(`${callName} - error : ${(error as Error).message || 'Unknown error'}`);
       throw new AppError(error);

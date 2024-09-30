@@ -55,6 +55,7 @@
             }
         ],
         "camelcase": "off",
+        "class-methods-use-this": "off",
         "no-underscore-dangle": "off",
         "no-unused-expressions": "off",
         "prefer-promise-reject-errors": "off",

@@ -1,7 +1,7 @@
 import express, { Application as ExpressApp } from 'express';
 import swaggerUi from 'swagger-ui-express';
-import RouterRegister from "src/interfaces/http/RouterRegister";
-import ErrorMiddleware from "src/interfaces/http/middlewares/ErrorMiddleware";
+import RouterRegister from 'src/interfaces/http/RouterRegister';
+import ErrorMiddleware from 'src/interfaces/http/middlewares/ErrorMiddleware';
 import swaggerSpec from 'src/utils/Swagger';
 import Logger from 'src/utils/Logger';
 

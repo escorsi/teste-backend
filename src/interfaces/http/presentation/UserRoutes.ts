@@ -26,7 +26,7 @@ export default class UserRoutes {
      *         street:
      *           type: string
      *           description: Street name
-     *           example: "Rua Exemplo"
+     *           example: "Rua Adoraria uma oportunidade na WeFit"
      *         number:
      *           type: string
      *           description: Street number
@@ -34,7 +34,7 @@ export default class UserRoutes {
      *         complement:
      *           type: string
      *           description: Complement (optional)
-     *           example: "Apartment 1"
+     *           example: "Apartmento 1"
      *         city:
      *           type: string
      *           description: City name
@@ -62,18 +62,14 @@ export default class UserRoutes {
      *           type: string
      *           description: The type of person (individual or company)
      *           example: "individual"
-     *         cnpj:
+     *         cpf:
      *           type: string
-     *           description: CNPJ if the personType is 'company'
-     *           example: "12345678000199"
-     *         responsibleCpf:
-     *           type: string
-     *           description: CPF of the responsible person
+     *           description: CPF of the person
      *           example: "12345678901"
      *         name:
      *           type: string
      *           description: Name of the person or company
-     *           example: "João Silva"
+     *           example: "Patrick Silva"
      *         mobile:
      *           type: string
      *           description: Mobile phone number
@@ -85,7 +81,11 @@ export default class UserRoutes {
      *         email:
      *           type: string
      *           description: Email address
-     *           example: "joao@example.com"
+     *           example: "patrick@example.com"
+     *         confirmEmail:
+     *           type: string
+     *           description: Email address
+     *           example: "patrick@example.com"
      *         address:
      *           $ref: '#/components/schemas/Address'
      *         acceptedTerms:
