@@ -1,0 +1,105 @@
+{
+    "env": {
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {},
+            "node": {
+                "paths": [
+                    "./"
+                ],
+                "extensions": [
+                    ".js",
+                    ".ts",
+                    ".d.ts"
+                ]
+            }
+        }
+    },
+    "plugins": [
+        "prettier",
+        "destructure-depth"
+    ],
+    "rules": {
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "js": "never"
+            }
+        ],
+        "prettier/prettier": "error",
+        "import/no-unresolved": [
+            2,
+            {
+                "commonjs": false,
+                "amd": false
+            }
+        ],
+        "camelcase": "off",
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "off",
+        "prefer-promise-reject-errors": "off",
+        "lines-between-class-members": "off",
+        "prefer-destructuring": "off",
+        "import/order": "off",
+        "max-len": [
+            "off",
+            {
+                "code": 300
+            }
+        ],
+        "radix": "off",
+        "no-param-reassign": "off",
+        "no-plusplus": "off",
+        "prefer-const": 0,
+        "no-await-in-loop": "error",
+        "import/no-import-module-exports": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/triple-slash-reference": "off",
+        "@typescript-eslint/no-explicit-any": [
+            "error",
+            {
+                "fixToUnknown": true,
+                "ignoreRestArgs": false
+            }
+        ],
+        "@typescript-eslint/no-misused-new": "error",
+        "max-depth": [
+            "error",
+            2
+        ],
+        "destructure-depth/max-depth": [
+            "error",
+            {
+                "object": {
+                    "max": 2
+                }
+            }
+        ],
+        "func-style": [
+            "error",
+            "declaration"
+        ]
+    }
+}
