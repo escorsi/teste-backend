@@ -1,6 +1,6 @@
 import IndividualUserEntity from 'src/domain/entities/IndividualUserEntity';
 import AppError from 'src/domain/errors/AppError';
-import { IEntryData } from 'src/domain/@types/IUserEntity'; // Supondo que IEntryData seja o tipo correto
+import { IEntryData } from 'src/domain/@types/IUserEntity';
 
 describe('IndividualUserEntity', () => {
   let individualUserEntity: IndividualUserEntity;
@@ -12,7 +12,7 @@ describe('IndividualUserEntity', () => {
   it('should throw AppError if CPF is missing', () => {
     const invalidUserData: IEntryData = {
       personType: 'individual',
-      cpf: '', // CPF ausente
+      cpf: '',
       name: 'John Doe',
       email: 'johndoe@example.com',
       confirmEmail: 'johndoe@example.com',

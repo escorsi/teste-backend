@@ -137,7 +137,7 @@ describe('UserEntity', () => {
         district: 'District Name',
         state: 'ST',
       },
-      acceptedTerms: false, // Terms not accepted
+      acceptedTerms: false,
     };
 
     try {
