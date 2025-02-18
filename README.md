@@ -14,6 +14,4 @@ o docker-compose vai criar um container de um MySQL e você poderá acessar via 
     ou
     yarn start
 
-Depois que concluir seu teste não de enviar o seu código junto a pasta data, nela está salvo o volume do MySQL criado pelo docker.
 
-Boa sorte =)
